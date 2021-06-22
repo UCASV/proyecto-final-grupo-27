@@ -18,7 +18,7 @@ namespace VaccinationProject.VaccinationProjectDBContext
         public string CitizenAddress { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public int? NumIdetifier { get; set; }
+        public int? NumIdentifier { get; set; }
         public int IdPriorityGroup { get; set; }
         public int IdManager { get; set; }
 

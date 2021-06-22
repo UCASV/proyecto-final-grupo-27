@@ -10,7 +10,7 @@ namespace VaccinationProject.VaccinationProjectDBContext
         public int Id { get; set; }
         public int? TimeSideEffects { get; set; }
         public int? IdSideEffects { get; set; }
-        public DateTime DatewWitingQueue { get; set; }
+        public DateTime DatewWaitingQueue { get; set; }
         public DateTime DateVaccination { get; set; }
         public DateTime? DateSecondDose { get; set; }
         public string PlaceSecondDose { get; set; }

@@ -95,7 +95,7 @@ namespace VaccinationProject.VaccinationProjectDBContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__C0317D9013A12C27");
+                    .HasName("PK__CITIZEN__C0317D90E225FF92");
 
                 entity.ToTable("CITIZEN");
 
@@ -195,7 +195,7 @@ namespace VaccinationProject.VaccinationProjectDBContext
             modelBuilder.Entity<Register>(entity =>
             {
                 entity.HasKey(e => new { e.IdManager, e.IdBooth })
-                    .HasName("PK__REGISTER__0C8393A563A814B4");
+                    .HasName("PK__REGISTER__0C8393A5333FD3B2");
 
                 entity.ToTable("REGISTER");
 
@@ -281,7 +281,7 @@ namespace VaccinationProject.VaccinationProjectDBContext
 
                 entity.Property(e => e.DateVaccination).HasColumnType("datetime");
 
-                entity.Property(e => e.DatewWitingQueue).HasColumnType("datetime");
+                entity.Property(e => e.DatewWaitingQueue).HasColumnType("datetime");
 
                 entity.Property(e => e.IdReservation).HasColumnName("Id_Reservation");
 
@@ -298,12 +298,12 @@ namespace VaccinationProject.VaccinationProjectDBContext
                     .WithMany(p => p.VaccinationProcesses)
                     .HasForeignKey(d => d.IdReservation)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__VACCINATI__Id_Re__619B8048");
+                    .HasConstraintName("FK__VACCINATI__Id_Re__4F7CD00D");
 
                 entity.HasOne(d => d.IdSideEffectsNavigation)
                     .WithMany(p => p.VaccinationProcesses)
                     .HasForeignKey(d => d.IdSideEffects)
-                    .HasConstraintName("FK__VACCINATI__Id_Si__60A75C0F");
+                    .HasConstraintName("FK__VACCINATI__Id_Si__4E88ABD4");
             });
 
             OnModelCreatingPartial(modelBuilder);
