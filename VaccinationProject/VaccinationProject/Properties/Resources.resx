@@ -112,12 +112,53 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logonopng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logonopng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gestor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logonopng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logonopng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CABINA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CABINA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3775748-check-date-list-planner-time_108972" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3775748-check-date-list-planner-time_108972.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoloLogoGobnayik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SoloLogoGobnayik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_record_icon_1501342" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical_record_icon_1501342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_record_icon_150134" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical_record_icon_150134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gestor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestor3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gestor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_de_Gobierno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_de_Gobierno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Medical_Appointment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Medical_Appointment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gestor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_record_icon_1501341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical_record_icon_1501341.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value> 
   <data name="logodegobierno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logodegobierno.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
