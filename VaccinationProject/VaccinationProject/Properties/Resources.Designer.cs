@@ -34,7 +34,6 @@ namespace VaccinationProject.Properties {
         
         /// <summary>
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
-
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
