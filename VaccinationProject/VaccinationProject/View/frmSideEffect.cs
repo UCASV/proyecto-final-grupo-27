@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VaccinationProject
 {
-    public partial class Form1 : Form
+    public partial class frmSideEffect : Form
     {
-        public Form1()
+        public frmSideEffect()
         {
             InitializeComponent();
         }
