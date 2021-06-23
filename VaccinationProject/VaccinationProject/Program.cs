@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccinationProject.View;
 
 namespace VaccinationProject
 {
@@ -17,7 +18,7 @@ namespace VaccinationProject
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmReservationTracking());
+            Application.Run(new frmMain());
         }
     }
 }
