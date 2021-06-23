@@ -34,6 +34,7 @@ namespace VaccinationProject.Properties {
         
         /// <summary>
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
@@ -200,22 +201,22 @@ namespace VaccinationProject.Properties {
             }
         }
         
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PngItem_1624737 {
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon logodegobierno {
             get {
-                object obj = ResourceManager.GetObject("PngItem_1624737", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("logodegobierno", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SoloLogoGobnayik {
+        internal static System.Drawing.Bitmap LogoPais {
             get {
-                object obj = ResourceManager.GetObject("SoloLogoGobnayik", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoPais", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
