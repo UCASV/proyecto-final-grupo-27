@@ -16,6 +16,5 @@ namespace VaccinationProject.View
         {
             InitializeComponent();
         }
-
     }
 }

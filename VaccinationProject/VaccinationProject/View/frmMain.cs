@@ -7,24 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccinationProject.Context;
+using VaccinationProject.Controller.Services;
+using VaccinationProject.View;
 
 namespace VaccinationProject
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        public Manager manager { get; set; }
+        public Booth booth { get; set; }
+
+        private TypeEmployeeServices TypeEmploye = new TypeEmployeeServices();
+        public frmMain(Manager manager, Booth booth)
         {
             InitializeComponent();
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void informaciónPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            this.manager = manager;
+            this.booth = booth;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -38,13 +38,19 @@ namespace VaccinationProject
             tabSupport.ItemSize = new Size(0, 1);
             tabSupport.SizeMode = TabSizeMode.Fixed;
             tabSupport.TabStop = false;
+
+            txtIDManager.Text = manager.Id.ToString();
+            txtNameManager.Text = manager.EmployeeName;
+            txtMailManager.Text = manager.Email;
+            txtTypeEmployee.Text = TypeEmploye.GetById(manager.IdTypeEmployee).TypeEmployee1;
+            txtManagerAddress.Text = manager.HomeAddress;
+
+            txtIDBooth.Text = booth.Id.ToString();
+            txtBoothAddress.Text = booth.Place;
+            txtMailBooth.Text = booth.Email;
+            txtPhoneBooth.Text = booth.PhoneNumber;
+            txtManagerBooth.Text = booth.ManagerBooth;
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void picBoothInformation_Click(object sender, EventArgs e)
         {
             tabSupport.SelectedIndex = 1;
@@ -58,6 +64,40 @@ namespace VaccinationProject
         private void mstPrincipalPage_Click(object sender, EventArgs e)
         {
             tabSupport.SelectedIndex = 0;
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            frmReservation window = new frmReservation();
+            window.ShowDialog();
+        }
+
+        private void btnReservationTracking_Click(object sender, EventArgs e)
+        {
+            frmReservationTracking window = new frmReservationTracking();
+            window.ShowDialog();
+        }
+
+        private void mstLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Cerrar sesión",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                this.Close();
+                frmLogIn window = new frmLogIn();
+                window.Show();
+            }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("¿Seguro que desea salir de la aplicación Soporte?", "Salir",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -38,7 +38,7 @@ namespace VaccinationProject
             this.gestorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cabinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSupport = new System.Windows.Forms.TabControl();
             this.tabPrincipalPage = new System.Windows.Forms.TabPage();
             this.tlpPrincipalPage = new System.Windows.Forms.TableLayoutPanel();
@@ -83,7 +83,6 @@ namespace VaccinationProject
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.informaciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabSupport.SuspendLayout();
             this.tabPrincipalPage.SuspendLayout();
@@ -109,7 +108,6 @@ namespace VaccinationProject
             this.informaciónPrincipalToolStripMenuItem.Name = "informaciónPrincipalToolStripMenuItem";
             this.informaciónPrincipalToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.informaciónPrincipalToolStripMenuItem.Text = "Soporte";
-            this.informaciónPrincipalToolStripMenuItem.Click += new System.EventHandler(this.informaciónPrincipalToolStripMenuItem_Click);
             // 
             // mstPrincipalPage
             // 
@@ -122,8 +120,7 @@ namespace VaccinationProject
             // 
             this.informaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestorToolStripMenuItem,
-            this.cabinaToolStripMenuItem,
-            this.informaciónToolStripMenuItem1});
+            this.cabinaToolStripMenuItem});
             this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
             this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.informaciónToolStripMenuItem.Text = "Información";
@@ -131,14 +128,14 @@ namespace VaccinationProject
             // gestorToolStripMenuItem
             // 
             this.gestorToolStripMenuItem.Name = "gestorToolStripMenuItem";
-            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.gestorToolStripMenuItem.Text = "Gestor";
             this.gestorToolStripMenuItem.Click += new System.EventHandler(this.picManagerInformation_Click);
             // 
             // cabinaToolStripMenuItem
             // 
             this.cabinaToolStripMenuItem.Name = "cabinaToolStripMenuItem";
-            this.cabinaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cabinaToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.cabinaToolStripMenuItem.Text = "Cabina";
             this.cabinaToolStripMenuItem.Click += new System.EventHandler(this.picBoothInformation_Click);
             // 
@@ -148,18 +145,19 @@ namespace VaccinationProject
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informaciónPrincipalToolStripMenuItem,
             this.informaciónToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.mstLogOut});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(524, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "Menu";
             // 
-            // cerrarSesiónToolStripMenuItem
+            // mstLogOut
             // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.mstLogOut.Name = "mstLogOut";
+            this.mstLogOut.Size = new System.Drawing.Size(88, 20);
+            this.mstLogOut.Text = "Cerrar Sesión";
+            this.mstLogOut.Click += new System.EventHandler(this.mstLogOut_Click);
             // 
             // tabSupport
             // 
@@ -282,6 +280,7 @@ namespace VaccinationProject
             this.btnReservation.TabIndex = 24;
             this.btnReservation.Text = "Proceso de Citas";
             this.btnReservation.UseVisualStyleBackColor = false;
+            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             // 
             // btnReservationTracking
             // 
@@ -297,6 +296,7 @@ namespace VaccinationProject
             this.btnReservationTracking.TabIndex = 24;
             this.btnReservationTracking.Text = "Seguimiento de Citas";
             this.btnReservationTracking.UseVisualStyleBackColor = false;
+            this.btnReservationTracking.Click += new System.EventHandler(this.btnReservationTracking_Click);
             // 
             // pictureBox2
             // 
@@ -360,11 +360,12 @@ namespace VaccinationProject
             // txtBoothAddress
             // 
             this.txtBoothAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.txtBoothAddress, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtBoothAddress, 3);
             this.txtBoothAddress.Enabled = false;
+            this.txtBoothAddress.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoothAddress.Location = new System.Drawing.Point(108, 363);
             this.txtBoothAddress.Name = "txtBoothAddress";
-            this.txtBoothAddress.Size = new System.Drawing.Size(204, 23);
+            this.txtBoothAddress.Size = new System.Drawing.Size(309, 22);
             this.txtBoothAddress.TabIndex = 11;
             this.txtBoothAddress.Text = "dirección de cabina";
             // 
@@ -450,7 +451,6 @@ namespace VaccinationProject
             this.label4.TabIndex = 4;
             this.label4.Text = "Encargado:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -469,9 +469,10 @@ namespace VaccinationProject
             // 
             this.txtIDBooth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIDBooth.Enabled = false;
-            this.txtIDBooth.Location = new System.Drawing.Point(108, 226);
+            this.txtIDBooth.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtIDBooth.Location = new System.Drawing.Point(108, 227);
             this.txtIDBooth.Name = "txtIDBooth";
-            this.txtIDBooth.Size = new System.Drawing.Size(99, 23);
+            this.txtIDBooth.Size = new System.Drawing.Size(99, 22);
             this.txtIDBooth.TabIndex = 7;
             this.txtIDBooth.Text = "id";
             // 
@@ -480,9 +481,10 @@ namespace VaccinationProject
             this.txtManagerBooth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtManagerBooth, 2);
             this.txtManagerBooth.Enabled = false;
-            this.txtManagerBooth.Location = new System.Drawing.Point(318, 226);
+            this.txtManagerBooth.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtManagerBooth.Location = new System.Drawing.Point(318, 227);
             this.txtManagerBooth.Name = "txtManagerBooth";
-            this.txtManagerBooth.Size = new System.Drawing.Size(208, 23);
+            this.txtManagerBooth.Size = new System.Drawing.Size(208, 22);
             this.txtManagerBooth.TabIndex = 8;
             this.txtManagerBooth.Text = "encargado de cabina";
             // 
@@ -490,9 +492,10 @@ namespace VaccinationProject
             // 
             this.txtPhoneBooth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneBooth.Enabled = false;
-            this.txtPhoneBooth.Location = new System.Drawing.Point(108, 288);
+            this.txtPhoneBooth.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPhoneBooth.Location = new System.Drawing.Point(108, 289);
             this.txtPhoneBooth.Name = "txtPhoneBooth";
-            this.txtPhoneBooth.Size = new System.Drawing.Size(99, 23);
+            this.txtPhoneBooth.Size = new System.Drawing.Size(99, 22);
             this.txtPhoneBooth.TabIndex = 9;
             this.txtPhoneBooth.Text = "teléfono";
             // 
@@ -501,9 +504,10 @@ namespace VaccinationProject
             this.txtMailBooth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtMailBooth, 2);
             this.txtMailBooth.Enabled = false;
-            this.txtMailBooth.Location = new System.Drawing.Point(318, 288);
+            this.txtMailBooth.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMailBooth.Location = new System.Drawing.Point(318, 289);
             this.txtMailBooth.Name = "txtMailBooth";
-            this.txtMailBooth.Size = new System.Drawing.Size(208, 23);
+            this.txtMailBooth.Size = new System.Drawing.Size(208, 22);
             this.txtMailBooth.TabIndex = 10;
             this.txtMailBooth.Text = "correo electrónico";
             // 
@@ -569,11 +573,12 @@ namespace VaccinationProject
             // txtManagerAddress
             // 
             this.txtManagerAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.SetColumnSpan(this.txtManagerAddress, 2);
+            this.tableLayoutPanel3.SetColumnSpan(this.txtManagerAddress, 3);
             this.txtManagerAddress.Enabled = false;
-            this.txtManagerAddress.Location = new System.Drawing.Point(108, 351);
+            this.txtManagerAddress.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtManagerAddress.Location = new System.Drawing.Point(108, 352);
             this.txtManagerAddress.Name = "txtManagerAddress";
-            this.txtManagerAddress.Size = new System.Drawing.Size(204, 23);
+            this.txtManagerAddress.Size = new System.Drawing.Size(309, 22);
             this.txtManagerAddress.TabIndex = 11;
             this.txtManagerAddress.Text = "dirección del gestor";
             // 
@@ -582,9 +587,10 @@ namespace VaccinationProject
             this.txtMailManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.txtMailManager, 2);
             this.txtMailManager.Enabled = false;
-            this.txtMailManager.Location = new System.Drawing.Point(318, 289);
+            this.txtMailManager.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMailManager.Location = new System.Drawing.Point(318, 290);
             this.txtMailManager.Name = "txtMailManager";
-            this.txtMailManager.Size = new System.Drawing.Size(208, 23);
+            this.txtMailManager.Size = new System.Drawing.Size(208, 22);
             this.txtMailManager.TabIndex = 10;
             this.txtMailManager.Text = "correo electrónico";
             // 
@@ -593,9 +599,10 @@ namespace VaccinationProject
             this.txtNameManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.txtNameManager, 2);
             this.txtNameManager.Enabled = false;
-            this.txtNameManager.Location = new System.Drawing.Point(318, 227);
+            this.txtNameManager.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNameManager.Location = new System.Drawing.Point(318, 228);
             this.txtNameManager.Name = "txtNameManager";
-            this.txtNameManager.Size = new System.Drawing.Size(208, 23);
+            this.txtNameManager.Size = new System.Drawing.Size(208, 22);
             this.txtNameManager.TabIndex = 9;
             this.txtNameManager.Text = "nombre del gestor";
             // 
@@ -698,9 +705,10 @@ namespace VaccinationProject
             // 
             this.txtIDManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIDManager.Enabled = false;
-            this.txtIDManager.Location = new System.Drawing.Point(108, 227);
+            this.txtIDManager.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtIDManager.Location = new System.Drawing.Point(108, 228);
             this.txtIDManager.Name = "txtIDManager";
-            this.txtIDManager.Size = new System.Drawing.Size(99, 23);
+            this.txtIDManager.Size = new System.Drawing.Size(99, 22);
             this.txtIDManager.TabIndex = 12;
             this.txtIDManager.Text = "id";
             // 
@@ -708,9 +716,10 @@ namespace VaccinationProject
             // 
             this.txtTypeEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTypeEmployee.Enabled = false;
-            this.txtTypeEmployee.Location = new System.Drawing.Point(108, 289);
+            this.txtTypeEmployee.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTypeEmployee.Location = new System.Drawing.Point(108, 290);
             this.txtTypeEmployee.Name = "txtTypeEmployee";
-            this.txtTypeEmployee.Size = new System.Drawing.Size(99, 23);
+            this.txtTypeEmployee.Size = new System.Drawing.Size(99, 22);
             this.txtTypeEmployee.TabIndex = 13;
             this.txtTypeEmployee.Text = "tipo de empleado";
             // 
@@ -778,12 +787,6 @@ namespace VaccinationProject
             this.label7.Text = "Información de Cabina";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // informaciónToolStripMenuItem1
-            // 
-            this.informaciónToolStripMenuItem1.Name = "informaciónToolStripMenuItem1";
-            this.informaciónToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.informaciónToolStripMenuItem1.Text = "Información";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -797,7 +800,9 @@ namespace VaccinationProject
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Soporte";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -835,7 +840,7 @@ namespace VaccinationProject
         private System.Windows.Forms.TabControl tabSupport;
         private System.Windows.Forms.TabPage tabPrincipalPage;
         private System.Windows.Forms.TabPage tabBoothInformation;
-        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mstLogOut;
         private System.Windows.Forms.TableLayoutPanel tlpPrincipalPage;
         private System.Windows.Forms.PictureBox picBoothInformation;
         private System.Windows.Forms.PictureBox picManagerInformation;
@@ -877,7 +882,6 @@ namespace VaccinationProject
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnReturntPrincipalPage;
         private System.Windows.Forms.Button btnReturnPrincipalPagev2;
-        private System.Windows.Forms.ToolStripMenuItem informaciónToolStripMenuItem1;
     }
 }
 

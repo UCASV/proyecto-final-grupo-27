@@ -172,6 +172,7 @@ namespace VaccinationProject.View
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Atrás";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtDui
             // 

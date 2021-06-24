@@ -30,26 +30,15 @@ namespace VaccinationProject.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVaccinationProcess));
-            this.btnWaiting = new System.Windows.Forms.Button();
             this.btnVaccine = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtpWaiting = new System.Windows.Forms.DateTimePicker();
+            this.btnWaiting = new System.Windows.Forms.Button();
             this.dtpVaccine = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtpWaiting = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnWaiting
-            // 
-            this.btnWaiting.BackColor = System.Drawing.SystemColors.Control;
-            this.btnWaiting.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnWaiting.Location = new System.Drawing.Point(327, 238);
-            this.btnWaiting.Name = "btnWaiting";
-            this.btnWaiting.Size = new System.Drawing.Size(123, 39);
-            this.btnWaiting.TabIndex = 0;
-            this.btnWaiting.Text = "Guardar";
-            this.btnWaiting.UseVisualStyleBackColor = false;
             // 
             // btnVaccine
             // 
@@ -64,29 +53,20 @@ namespace VaccinationProject.View
             this.btnVaccine.Text = "Guardar ";
             this.btnVaccine.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // btnWaiting
             // 
-            this.pictureBox1.Image = global::VaccinationProject.Properties.Resources.BannerMinisterio;
-            this.pictureBox1.Location = new System.Drawing.Point(75, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 165);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dtpWaiting
-            // 
-            this.dtpWaiting.CustomFormat = "yyyy/MMM/ddd HH:mm";
-            this.dtpWaiting.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpWaiting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpWaiting.Location = new System.Drawing.Point(77, 241);
-            this.dtpWaiting.Name = "dtpWaiting";
-            this.dtpWaiting.Size = new System.Drawing.Size(192, 27);
-            this.dtpWaiting.TabIndex = 4;
+            this.btnWaiting.BackColor = System.Drawing.SystemColors.Control;
+            this.btnWaiting.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnWaiting.Location = new System.Drawing.Point(327, 238);
+            this.btnWaiting.Name = "btnWaiting";
+            this.btnWaiting.Size = new System.Drawing.Size(123, 39);
+            this.btnWaiting.TabIndex = 0;
+            this.btnWaiting.Text = "Guardar";
+            this.btnWaiting.UseVisualStyleBackColor = false;
             // 
             // dtpVaccine
             // 
-            this.dtpVaccine.CustomFormat = "yyyy/MMM/ddd HH:mm";
+            this.dtpVaccine.CustomFormat = "yyyy/MMM/dd HH:mm";
             this.dtpVaccine.Enabled = false;
             this.dtpVaccine.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpVaccine.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -94,6 +74,27 @@ namespace VaccinationProject.View
             this.dtpVaccine.Name = "dtpVaccine";
             this.dtpVaccine.Size = new System.Drawing.Size(192, 27);
             this.dtpVaccine.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Fax", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(77, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(234, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Hora de aplicacion de vacuna:";
+            // 
+            // dtpWaiting
+            // 
+            this.dtpWaiting.CustomFormat = "yyyy/MMM/dd HH:mm";
+            this.dtpWaiting.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpWaiting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpWaiting.Location = new System.Drawing.Point(77, 241);
+            this.dtpWaiting.Name = "dtpWaiting";
+            this.dtpWaiting.Size = new System.Drawing.Size(192, 27);
+            this.dtpWaiting.TabIndex = 4;
             // 
             // label1
             // 
@@ -106,16 +107,15 @@ namespace VaccinationProject.View
             this.label1.TabIndex = 6;
             this.label1.Text = "Hora de ingreso a la fila de espera:";
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Fax", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 281);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Hora de aplicacion de vacuna:";
+            this.pictureBox1.Image = global::VaccinationProject.Properties.Resources.BannerMinisterio;
+            this.pictureBox1.Location = new System.Drawing.Point(75, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(384, 165);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // frmVaccinationProcess
             // 
@@ -144,12 +144,12 @@ namespace VaccinationProject.View
 
         #endregion
 
-        private System.Windows.Forms.Button btnWaiting;
         private System.Windows.Forms.Button btnVaccine;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dtpWaiting;
+        private System.Windows.Forms.Button btnWaiting;
         private System.Windows.Forms.DateTimePicker dtpVaccine;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpWaiting;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
