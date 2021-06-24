@@ -63,9 +63,9 @@ namespace VaccinationProject.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3775748_check_date_list_planner_time_108972 {
+        internal static System.Drawing.Bitmap AUTONOMAS_TW_1500X500_1536x512 {
             get {
-                object obj = ResourceManager.GetObject("3775748-check-date-list-planner-time_108972", resourceCulture);
+                object obj = ResourceManager.GetObject("AUTONOMAS_TW-1500X500-1536x512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -150,6 +150,16 @@ namespace VaccinationProject.Properties {
             }
         }
         
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unnamed {
+            get {
+                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
