@@ -16,6 +16,7 @@ namespace VaccinationProject.View
     {
         private BoothServices Booth = new BoothServices();
         private ManagerServices Manager = new ManagerServices();
+        private RegisterServices Register = new RegisterServices();
         public frmLogIn()
         {
             InitializeComponent();
@@ -32,9 +33,10 @@ namespace VaccinationProject.View
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-
             var man = Manager.GetByUserandPass(txtUser.Text, txtPass.Text);
-          
+            var boo = Booth.GetById(cmbBooth.SelectedIndex + 1);
+
+
             if (txtUser.Text == "" || txtPass.Text == "")
             {
                 MessageBox.Show("Rellene todos los campos para iniciar sesion correctamente", "Ministerio de Salud",
@@ -50,7 +52,13 @@ namespace VaccinationProject.View
             {
                 MessageBox.Show($"Bienvenido/a {man.EmployeeName}", "Ministerio de Salud",
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMain window = new frmMain(man, Booth.GetById(cmbBooth.SelectedIndex + 1));
+                Register reg = new Register();
+                reg.IdManager = man.Id;
+                reg.IdBooth = boo.Id;
+                reg.DateLogin = DateTime.Now;
+                Register.Create(reg);
+                Register.Save();
+                frmMain window = new frmMain(man, boo);
                 window.Show();
                 this.Hide();
             }

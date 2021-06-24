@@ -95,7 +95,7 @@ namespace VaccinationProject.Context
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__C0317D90E225FF92");
+                    .HasName("PK__CITIZEN__C0317D90FA1E08A0");
 
                 entity.ToTable("CITIZEN");
 
@@ -195,7 +195,7 @@ namespace VaccinationProject.Context
             modelBuilder.Entity<Register>(entity =>
             {
                 entity.HasKey(e => new { e.IdManager, e.IdBooth })
-                    .HasName("PK__REGISTER__0C8393A5333FD3B2");
+                    .HasName("PK__REGISTER__0C8393A56FFB1AA4");
 
                 entity.ToTable("REGISTER");
 
@@ -221,8 +221,6 @@ namespace VaccinationProject.Context
             modelBuilder.Entity<Reservation>(entity =>
             {
                 entity.ToTable("RESERVATION");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.DateReservation).HasColumnType("datetime");
 
@@ -272,8 +270,6 @@ namespace VaccinationProject.Context
             modelBuilder.Entity<VaccinationProcess>(entity =>
             {
                 entity.ToTable("VACCINATION_PROCESS");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.DateSecondDose)
                     .HasColumnType("datetime")
