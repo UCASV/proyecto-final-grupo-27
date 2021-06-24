@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VaccinationProject
+namespace VaccinationProject.View
 {
-    public partial class Form1 : Form
+    public partial class frmReservation : Form
     {
-        public Form1()
+        public frmReservation()
         {
             InitializeComponent();
         }
-
     }
 }
