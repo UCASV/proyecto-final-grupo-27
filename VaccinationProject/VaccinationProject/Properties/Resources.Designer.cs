@@ -63,16 +63,6 @@ namespace VaccinationProject.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AUTONOMAS_TW_1500X500_1536x512 {
-            get {
-                object obj = ResourceManager.GetObject("AUTONOMAS_TW-1500X500-1536x512", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BannerMinisterio {
             get {
                 object obj = ResourceManager.GetObject("BannerMinisterio", resourceCulture);
@@ -103,26 +93,6 @@ namespace VaccinationProject.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gestor1 {
-            get {
-                object obj = ResourceManager.GetObject("gestor1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap gestor2 {
-            get {
-                object obj = ResourceManager.GetObject("gestor2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap gestor3 {
             get {
                 object obj = ResourceManager.GetObject("gestor3", resourceCulture);
@@ -141,25 +111,15 @@ namespace VaccinationProject.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Bitmap logonopng {
+        internal static System.Drawing.Icon logodegobierno {
             get {
-                object obj = ResourceManager.GetObject("logonopng", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("logodegobierno", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap unnamed {
-            get {
-                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
@@ -183,26 +143,6 @@ namespace VaccinationProject.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap medical_record_icon_150134 {
-            get {
-                object obj = ResourceManager.GetObject("medical_record_icon_150134", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap medical_record_icon_1501341 {
-            get {
-                object obj = ResourceManager.GetObject("medical_record_icon_1501341", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap medical_record_icon_1501342 {
             get {
                 object obj = ResourceManager.GetObject("medical_record_icon_1501342", resourceCulture);
@@ -210,22 +150,22 @@ namespace VaccinationProject.Properties {
             }
         }
         
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon logodegobierno {
+        internal static System.Drawing.Bitmap SoloLogoGobnayik {
             get {
-                object obj = ResourceManager.GetObject("logodegobierno", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("SoloLogoGobnayik", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogoPais {
+        internal static System.Drawing.Bitmap unnamed {
             get {
-                object obj = ResourceManager.GetObject("LogoPais", resourceCulture);
+                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

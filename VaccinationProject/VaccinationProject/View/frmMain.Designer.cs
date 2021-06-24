@@ -83,6 +83,7 @@ namespace VaccinationProject
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.informaciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabSupport.SuspendLayout();
             this.tabPrincipalPage.SuspendLayout();
@@ -113,7 +114,7 @@ namespace VaccinationProject
             // mstPrincipalPage
             // 
             this.mstPrincipalPage.Name = "mstPrincipalPage";
-            this.mstPrincipalPage.Size = new System.Drawing.Size(180, 22);
+            this.mstPrincipalPage.Size = new System.Drawing.Size(159, 22);
             this.mstPrincipalPage.Text = "Pagina Principal";
             this.mstPrincipalPage.Click += new System.EventHandler(this.mstPrincipalPage_Click);
             // 
@@ -121,7 +122,8 @@ namespace VaccinationProject
             // 
             this.informaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestorToolStripMenuItem,
-            this.cabinaToolStripMenuItem});
+            this.cabinaToolStripMenuItem,
+            this.informaciónToolStripMenuItem1});
             this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
             this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.informaciónToolStripMenuItem.Text = "Información";
@@ -776,6 +778,12 @@ namespace VaccinationProject
             this.label7.Text = "Información de Cabina";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // informaciónToolStripMenuItem1
+            // 
+            this.informaciónToolStripMenuItem1.Name = "informaciónToolStripMenuItem1";
+            this.informaciónToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.informaciónToolStripMenuItem1.Text = "Información";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -869,6 +877,7 @@ namespace VaccinationProject
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnReturntPrincipalPage;
         private System.Windows.Forms.Button btnReturnPrincipalPagev2;
+        private System.Windows.Forms.ToolStripMenuItem informaciónToolStripMenuItem1;
     }
 }
 
