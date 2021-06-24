@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace VaccinationProject.VaccinationProjectDBContext
+namespace VaccinationProject.Context
 {
     public partial class Manager
     {
