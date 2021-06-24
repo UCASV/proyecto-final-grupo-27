@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace VaccinationProject.VaccinationProjectDBContext
+namespace VaccinationProject.Context
 {
     public partial class VaccinationProjectDBContext : DbContext
     {
