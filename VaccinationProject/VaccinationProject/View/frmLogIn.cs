@@ -19,17 +19,17 @@ namespace VaccinationProject.View
 
         private void txtUser_Click(object sender, EventArgs e)
         {
-            txtUser.Text= "";
+           
         }
 
         private void txtPass_Click(object sender, EventArgs e)
         {
-            txtPass.Text = "";
+            
         }
 
         private void cmbBooth_Click(object sender, EventArgs e)
         {
-            cmbBooth.Text = "";
+            
         }
     }
  }
