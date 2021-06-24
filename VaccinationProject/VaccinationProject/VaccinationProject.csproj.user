@@ -10,5 +10,17 @@
     <Compile Update="View\frmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\frmReservationTracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\frmSideEffect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\frmVaccinationProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
