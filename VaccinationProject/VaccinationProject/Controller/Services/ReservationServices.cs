@@ -27,9 +27,9 @@ namespace VaccinationProject.Controller.Services
             return _context.Reservations.ToList();
         }
 
-        public Reservation GetById(int id)
+        public Reservation GetById(string id)
         {
-            return _context.Reservations.Find(id);
+            return _context.Reservations.FirstOrDefault(r => r.DuiCitizen == id);
         }
 
         public void Save()

@@ -26,7 +26,7 @@ namespace VaccinationProject.Controller.Services
             return _context.Registers.ToList();
         }
 
-        public Register GetById(int id)
+        public Register GetById(string id)
         {
             return _context.Registers.Find(id);
         }
