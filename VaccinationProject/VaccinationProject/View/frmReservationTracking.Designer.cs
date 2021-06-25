@@ -29,6 +29,8 @@ namespace VaccinationProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReservationTracking));
             this.label1 = new System.Windows.Forms.Label();
             this.txtDuiCitizen = new System.Windows.Forms.TextBox();
@@ -37,6 +39,7 @@ namespace VaccinationProject
             this.btnSavePdf = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sfdPDF = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservationTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +55,6 @@ namespace VaccinationProject
             this.label1.TabIndex = 0;
             this.label1.Text = "DUI Ciudadano:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseWaitCursor = true;
             // 
             // txtDuiCitizen
             // 
@@ -62,17 +64,39 @@ namespace VaccinationProject
             this.txtDuiCitizen.Name = "txtDuiCitizen";
             this.txtDuiCitizen.Size = new System.Drawing.Size(159, 23);
             this.txtDuiCitizen.TabIndex = 1;
-            this.txtDuiCitizen.UseWaitCursor = true;
             // 
             // dgvReservationTrack
             // 
-            this.dgvReservationTrack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReservationTrack.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvReservationTrack.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvReservationTrack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.dgvReservationTrack.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvReservationTrack.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservationTrack.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvReservationTrack.ColumnHeadersHeight = 30;
+            this.dgvReservationTrack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvReservationTrack.EnableHeadersVisualStyles = false;
+            this.dgvReservationTrack.GridColor = System.Drawing.Color.CadetBlue;
             this.dgvReservationTrack.Location = new System.Drawing.Point(32, 251);
             this.dgvReservationTrack.Name = "dgvReservationTrack";
+            this.dgvReservationTrack.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvReservationTrack.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReservationTrack.RowTemplate.Height = 25;
+            this.dgvReservationTrack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReservationTrack.Size = new System.Drawing.Size(287, 200);
             this.dgvReservationTrack.TabIndex = 2;
-            this.dgvReservationTrack.UseWaitCursor = true;
             // 
             // btnVerifyCitizen
             // 
@@ -86,7 +110,7 @@ namespace VaccinationProject
             this.btnVerifyCitizen.TabIndex = 3;
             this.btnVerifyCitizen.Text = "Verificar DUI";
             this.btnVerifyCitizen.UseVisualStyleBackColor = false;
-            this.btnVerifyCitizen.UseWaitCursor = true;
+            this.btnVerifyCitizen.Click += new System.EventHandler(this.btnVerifyCitizen_Click);
             // 
             // btnSavePdf
             // 
@@ -99,7 +123,7 @@ namespace VaccinationProject
             this.btnSavePdf.TabIndex = 4;
             this.btnSavePdf.Text = "Guardar PDF";
             this.btnSavePdf.UseVisualStyleBackColor = false;
-            this.btnSavePdf.UseWaitCursor = true;
+            this.btnSavePdf.Click += new System.EventHandler(this.btnSavePdf_Click);
             // 
             // btnProcess
             // 
@@ -112,7 +136,7 @@ namespace VaccinationProject
             this.btnProcess.TabIndex = 5;
             this.btnProcess.Text = "Iniciar Proceso";
             this.btnProcess.UseVisualStyleBackColor = false;
-            this.btnProcess.UseWaitCursor = true;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // pictureBox1
             // 
@@ -123,7 +147,6 @@ namespace VaccinationProject
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
             // 
             // frmReservationTracking
             // 
@@ -142,8 +165,9 @@ namespace VaccinationProject
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmReservationTracking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguimiento de Cita";
-            this.UseWaitCursor = true;
+            this.Load += new System.EventHandler(this.frmReservationTracking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservationTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -160,6 +184,7 @@ namespace VaccinationProject
         private System.Windows.Forms.Button btnSavePdf;
         private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.SaveFileDialog sfdPDF;
     }
 }
 

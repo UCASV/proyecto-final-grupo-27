@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VaccinationProject.Controller.Repository;
 using VaccinationProject.Context;
+using VaccinationProject.Controller.Repository;
 
 namespace VaccinationProject.Controller.Services
 {
-    public class ReservationServices : IRepository02<Reservation>
+    class RegisterServices : IRepository02<Register>
     {
         private VaccinationProjectDBContext _context;
 
-        public ReservationServices()
+        public RegisterServices()
         {
             _context = new VaccinationProjectDBContext();
         }
 
-        public void Create(Reservation item)
+        public void Create(Register item)
         {
             _context.Add(item);
         }
-
-        public List<Reservation> GetAll()
+        public List<Register> GetAll()
         {
-            return _context.Reservations.ToList();
+            return _context.Registers.ToList();
         }
 
-        public Reservation GetById(string id)
+        public Register GetById(string id)
         {
-            return _context.Reservations.FirstOrDefault(r => r.DuiCitizen == id);
+            return _context.Registers.Find(id);
         }
 
         public void Save()

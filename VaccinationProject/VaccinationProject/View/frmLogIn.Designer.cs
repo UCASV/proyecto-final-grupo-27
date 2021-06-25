@@ -29,6 +29,7 @@ namespace VaccinationProject.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogIn));
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@ namespace VaccinationProject.View
             this.lblGob = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.cmbBooth = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ttLogIn = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,26 +57,25 @@ namespace VaccinationProject.View
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUser.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtUser.Location = new System.Drawing.Point(117, 250);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
             this.txtUser.PlaceholderText = "Usuario";
             this.txtUser.Size = new System.Drawing.Size(238, 22);
             this.txtUser.TabIndex = 1;
-            this.txtUser.Click += new System.EventHandler(this.txtUser_Click);
             // 
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPass.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtPass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPass.Location = new System.Drawing.Point(117, 292);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.PlaceholderText = "Contraseña";
             this.txtPass.Size = new System.Drawing.Size(238, 22);
             this.txtPass.TabIndex = 2;
-            this.txtPass.Click += new System.EventHandler(this.txtPass_Click);
             // 
             // lblGob
             // 
@@ -91,25 +93,36 @@ namespace VaccinationProject.View
             this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogIn.Location = new System.Drawing.Point(144, 382);
+            this.btnLogIn.Location = new System.Drawing.Point(144, 410);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(171, 39);
             this.btnLogIn.TabIndex = 4;
             this.btnLogIn.Text = "Ingresar";
             this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // cmbBooth
             // 
             this.cmbBooth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBooth.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.cmbBooth.FormattingEnabled = true;
-            this.cmbBooth.Location = new System.Drawing.Point(117, 337);
+            this.cmbBooth.Location = new System.Drawing.Point(117, 347);
             this.cmbBooth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbBooth.Name = "cmbBooth";
             this.cmbBooth.Size = new System.Drawing.Size(238, 23);
             this.cmbBooth.TabIndex = 5;
-            this.cmbBooth.Click += new System.EventHandler(this.cmbBooth_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Fax", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(117, 328);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(248, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Escoja la dirección de la cabina:";
             // 
             // frmLogIn
             // 
@@ -117,6 +130,7 @@ namespace VaccinationProject.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(466, 469);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbBooth);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.lblGob);
@@ -129,6 +143,8 @@ namespace VaccinationProject.View
             this.Name = "frmLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogIn_FormClosing);
+            this.Load += new System.EventHandler(this.frmLogIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +159,7 @@ namespace VaccinationProject.View
         private System.Windows.Forms.Label lblGob;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.ComboBox cmbBooth;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip ttLogIn;
     }
 }

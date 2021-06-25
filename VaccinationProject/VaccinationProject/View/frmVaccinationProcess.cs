@@ -22,7 +22,6 @@ namespace VaccinationProject.View
             InitializeComponent();
             reservationData = UserReservation;
         }
-
         private void btnWaiting_Click(object sender, EventArgs e)
         {
             vaccinationProcessData.DatewWaitingQueue = dtpWaiting.Value;
