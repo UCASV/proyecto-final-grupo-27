@@ -95,7 +95,7 @@ namespace VaccinationProject.Context
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__C0317D90FA1E08A0");
+                    .HasName("PK__CITIZEN__C0317D904BD256E9");
 
                 entity.ToTable("CITIZEN");
 
@@ -176,7 +176,7 @@ namespace VaccinationProject.Context
                     .WithMany(p => p.Managers)
                     .HasForeignKey(d => d.IdTypeEmployee)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__MANAGER__Id_Type__46E78A0C");
+                    .HasConstraintName("FK__MANAGER__Id_Type__47DBAE45");
             });
 
             modelBuilder.Entity<PriorityGroup>(entity =>
@@ -194,16 +194,13 @@ namespace VaccinationProject.Context
 
             modelBuilder.Entity<Register>(entity =>
             {
-                entity.HasKey(e => new { e.IdManager, e.IdBooth })
-                    .HasName("PK__REGISTER__0C8393A56FFB1AA4");
-
                 entity.ToTable("REGISTER");
 
-                entity.Property(e => e.IdManager).HasColumnName("Id_Manager");
+                entity.Property(e => e.DateLogin).HasColumnType("datetime");
 
                 entity.Property(e => e.IdBooth).HasColumnName("Id_Booth");
 
-                entity.Property(e => e.DateLogin).HasColumnType("datetime");
+                entity.Property(e => e.IdManager).HasColumnName("Id_Manager");
 
                 entity.HasOne(d => d.IdBoothNavigation)
                     .WithMany(p => p.Registers)

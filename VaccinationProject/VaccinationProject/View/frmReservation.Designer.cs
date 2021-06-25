@@ -42,6 +42,7 @@ namespace VaccinationProject.View
             this.picBannerMinSal = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.txtDui = new System.Windows.Forms.TextBox();
+            this.txtChronicDisease = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTopLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBannerMinSal)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@ namespace VaccinationProject.View
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtName.Location = new System.Drawing.Point(119, 176);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
@@ -72,7 +73,7 @@ namespace VaccinationProject.View
             // txtPhoneN
             // 
             this.txtPhoneN.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhoneN.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtPhoneN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPhoneN.Location = new System.Drawing.Point(119, 340);
             this.txtPhoneN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneN.Name = "txtPhoneN";
@@ -83,7 +84,7 @@ namespace VaccinationProject.View
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEmail.Location = new System.Drawing.Point(119, 286);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
@@ -94,7 +95,7 @@ namespace VaccinationProject.View
             // txtAdress
             // 
             this.txtAdress.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAdress.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtAdress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAdress.Location = new System.Drawing.Point(119, 230);
             this.txtAdress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAdress.Name = "txtAdress";
@@ -105,8 +106,8 @@ namespace VaccinationProject.View
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtId.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtId.Location = new System.Drawing.Point(119, 397);
+            this.txtId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtId.Location = new System.Drawing.Point(119, 429);
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Name = "txtId";
             this.txtId.PlaceholderText = "Identificador";
@@ -130,18 +131,19 @@ namespace VaccinationProject.View
             this.btnReservar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservar.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReservar.Location = new System.Drawing.Point(299, 448);
+            this.btnReservar.Location = new System.Drawing.Point(300, 467);
             this.btnReservar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(143, 35);
             this.btnReservar.TabIndex = 9;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = false;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // txtAge
             // 
             this.txtAge.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAge.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtAge.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAge.Location = new System.Drawing.Point(366, 340);
             this.txtAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAge.Name = "txtAge";
@@ -165,7 +167,7 @@ namespace VaccinationProject.View
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(119, 448);
+            this.btnBack.Location = new System.Drawing.Point(122, 467);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(143, 35);
@@ -177,7 +179,7 @@ namespace VaccinationProject.View
             // txtDui
             // 
             this.txtDui.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDui.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtDui.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDui.Location = new System.Drawing.Point(256, 340);
             this.txtDui.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDui.Name = "txtDui";
@@ -185,12 +187,24 @@ namespace VaccinationProject.View
             this.txtDui.Size = new System.Drawing.Size(106, 22);
             this.txtDui.TabIndex = 13;
             // 
+            // txtChronicDisease
+            // 
+            this.txtChronicDisease.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtChronicDisease.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtChronicDisease.Location = new System.Drawing.Point(119, 386);
+            this.txtChronicDisease.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtChronicDisease.Name = "txtChronicDisease";
+            this.txtChronicDisease.PlaceholderText = "Enfermedad Crónica";
+            this.txtChronicDisease.Size = new System.Drawing.Size(323, 22);
+            this.txtChronicDisease.TabIndex = 14;
+            // 
             // frmReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(553, 562);
+            this.Controls.Add(this.txtChronicDisease);
             this.Controls.Add(this.txtDui);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.picBannerMinSal);
@@ -230,5 +244,6 @@ namespace VaccinationProject.View
         private System.Windows.Forms.PictureBox picBannerMinSal;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtDui;
+        private System.Windows.Forms.TextBox txtChronicDisease;
     }
 }

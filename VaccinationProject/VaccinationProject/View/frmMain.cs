@@ -68,7 +68,7 @@ namespace VaccinationProject
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
-            frmReservation window = new frmReservation();
+            frmReservation window = new frmReservation(manager);
             window.ShowDialog();
         }
 
