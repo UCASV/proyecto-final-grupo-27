@@ -18,7 +18,7 @@ namespace VaccinationProject
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmReservationTracking());
+            Application.Run(new frmVaccinationProcess());
         }
     }
 }
