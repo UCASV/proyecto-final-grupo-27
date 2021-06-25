@@ -51,7 +51,7 @@ namespace VaccinationProject
 
             if (Regex.IsMatch(dui, pattern))
             {
-                var reser = reservation.GetById(dui);
+                var reser = reservation.GetByDUI(dui);
 
                 if (reser != null)
                 {
@@ -154,7 +154,7 @@ namespace VaccinationProject
 
                 if (txtDuiCitizen.Text != null && Regex.IsMatch(txtDuiCitizen.Text, pattern))
                 {
-                    ReservationReference = reservation.GetById(txtDuiCitizen.Text);
+                    ReservationReference = reservation.GetByDUI(txtDuiCitizen.Text);
 
                     if(ReservationReference != null)
                     {
