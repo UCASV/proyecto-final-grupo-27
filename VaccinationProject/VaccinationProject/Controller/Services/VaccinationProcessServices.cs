@@ -27,7 +27,7 @@ namespace VaccinationProject.Controller.Services
             return _context.VaccinationProcesses.ToList();
         }
 
-        public VaccinationProcess GetById(int id)
+        public VaccinationProcess GetById(string id)
         {
             return _context.VaccinationProcesses.Find(id);
         }

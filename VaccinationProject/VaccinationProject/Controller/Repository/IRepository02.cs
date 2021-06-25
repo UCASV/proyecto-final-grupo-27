@@ -11,7 +11,7 @@ namespace VaccinationProject.Controller.Repository
 
         List<T> GetAll();
 
-        T GetById(int id);
+        T GetById(string id);
 
         void Create(T item);
 
