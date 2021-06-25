@@ -50,6 +50,7 @@ namespace VaccinationProject.View
             this.btnWaiting.TabIndex = 0;
             this.btnWaiting.Text = "Guardar";
             this.btnWaiting.UseVisualStyleBackColor = false;
+            this.btnWaiting.Click += new System.EventHandler(this.btnWaiting_Click);
             // 
             // btnVaccine
             // 
@@ -63,6 +64,7 @@ namespace VaccinationProject.View
             this.btnVaccine.TabIndex = 1;
             this.btnVaccine.Text = "Guardar ";
             this.btnVaccine.UseVisualStyleBackColor = false;
+            this.btnVaccine.Click += new System.EventHandler(this.btnVaccine_Click);
             // 
             // pictureBox1
             // 
@@ -136,6 +138,7 @@ namespace VaccinationProject.View
             this.Name = "frmVaccinationProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proceso de Vacunación";
+            this.Load += new System.EventHandler(this.frmVaccinationProcess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

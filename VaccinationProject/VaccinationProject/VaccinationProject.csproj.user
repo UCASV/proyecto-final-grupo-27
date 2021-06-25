@@ -13,9 +13,6 @@
     <Compile Update="View\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\frmSideEffect.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="View\frmVaccinationProcess.cs">
       <SubType>Form</SubType>
     </Compile>
