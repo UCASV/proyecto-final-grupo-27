@@ -78,23 +78,23 @@ namespace VaccinationProject.View
             // 
             // dtpWaiting
             // 
-            this.dtpWaiting.CustomFormat = "yyyy/MMM/ddd HH:mm";
-            this.dtpWaiting.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpWaiting.CustomFormat = "yyyy/MMM/dd HH:mm";
+            this.dtpWaiting.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpWaiting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpWaiting.Location = new System.Drawing.Point(77, 241);
             this.dtpWaiting.Name = "dtpWaiting";
-            this.dtpWaiting.Size = new System.Drawing.Size(192, 27);
+            this.dtpWaiting.Size = new System.Drawing.Size(192, 26);
             this.dtpWaiting.TabIndex = 4;
             // 
             // dtpVaccine
             // 
-            this.dtpVaccine.CustomFormat = "yyyy/MMM/ddd HH:mm";
+            this.dtpVaccine.CustomFormat = "yyyy/MMM/dd HH:mm";
             this.dtpVaccine.Enabled = false;
-            this.dtpVaccine.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpVaccine.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpVaccine.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVaccine.Location = new System.Drawing.Point(77, 312);
             this.dtpVaccine.Name = "dtpVaccine";
-            this.dtpVaccine.Size = new System.Drawing.Size(192, 27);
+            this.dtpVaccine.Size = new System.Drawing.Size(192, 26);
             this.dtpVaccine.TabIndex = 5;
             // 
             // label1

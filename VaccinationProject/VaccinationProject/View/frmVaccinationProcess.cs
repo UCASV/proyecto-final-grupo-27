@@ -14,14 +14,13 @@ namespace VaccinationProject.View
 {
     public partial class frmVaccinationProcess : Form
     {
-        private Reservation ReservationData { get; set; }
-        private VaccinationProcessServices vaccineProccess;
-        
+        private Reservation reservationData = new Reservation();
+        private VaccinationProcessServices vaccineProccess = new VaccinationProcessServices();
         private VaccinationProcess vaccinationProcessData = new VaccinationProcess();
-        public frmVaccinationProcess(/*Reservation UserReservation*/)
+        public frmVaccinationProcess(Reservation UserReservation)
         {
             InitializeComponent();
-            //this.ReservationData = UserReservation;
+            reservationData = UserReservation;
         }
 
         private void btnWaiting_Click(object sender, EventArgs e)
@@ -32,12 +31,20 @@ namespace VaccinationProject.View
             btnVaccine.Enabled = true;
             dtpWaiting.Enabled = false;
             btnWaiting.Enabled = false;
+
+            dtpVaccine.MinDate = vaccinationProcessData.DatewWaitingQueue;
+            dtpVaccine.MaxDate = Convert.ToDateTime(vaccinationProcessData.DatewWaitingQueue.ToShortDateString()+ " " + "23:59");
         }
 
         private void frmVaccinationProcess_Load(object sender, EventArgs e)
         {
-            //dtpWaiting.MinDate = ReservationData.DateReservation;
-            //dtpVaccine.MinDate = ReservationData.DateReservation;
+            vaccinationProcessData.IdReservation = reservationData.Id;
+            var shortDateValue = reservationData.DateReservation.ToShortDateString();
+            dtpWaiting.MinDate = reservationData.DateReservation;
+            dtpWaiting.MaxDate = Convert.ToDateTime(shortDateValue + " " + "23:59");
+
+            dtpVaccine.MinDate = reservationData.DateReservation;
+            dtpVaccine.MaxDate = Convert.ToDateTime(shortDateValue + " " + "23:59");
         }
 
         private void btnVaccine_Click(object sender, EventArgs e)
@@ -50,15 +57,21 @@ namespace VaccinationProject.View
                 this.Hide();
                 window.Show();
             }
-            else if(message == DialogResult.No)
+            else 
             {
+                Random random = new Random();
+                int nextDose = random.Next(42, 57);
+                vaccinationProcessData.DateSecondDose = vaccinationProcessData.DateVaccination.AddDays(nextDose);
+                vaccinationProcessData.PlaceSecondDose = reservationData.VaccinationPlace;
 
+                vaccineProccess.Create(vaccinationProcessData);
+                vaccineProccess.Save();
+
+                MessageBox.Show($"Su cita para segunda dosis a sido agendada\nLugar: {vaccinationProcessData.PlaceSecondDose}\nFecha: {vaccinationProcessData.DateSecondDose}", "Gobierno de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var window = new frmMain();
+                this.Hide();
+                window.Show();
             }
-        }
-
-        private void DateSecondDose()
-        {
-
         }
     }
 }
