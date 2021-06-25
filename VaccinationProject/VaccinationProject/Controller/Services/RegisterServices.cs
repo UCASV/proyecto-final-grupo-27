@@ -8,7 +8,7 @@ using VaccinationProject.Controller.Repository;
 
 namespace VaccinationProject.Controller.Services
 {
-    class RegisterServices : IRepository02<Register>
+    class RegisterServices : IRepository02<Register> 
     {
         private VaccinationProjectDBContext _context;
 
@@ -21,15 +21,7 @@ namespace VaccinationProject.Controller.Services
         {
             _context.Add(item);
         }
-        public List<Register> GetAll()
-        {
-            return _context.Registers.ToList();
-        }
 
-        public Register GetById(string id)
-        {
-            return _context.Registers.Find(id);
-        }
 
         public void Save()
         {

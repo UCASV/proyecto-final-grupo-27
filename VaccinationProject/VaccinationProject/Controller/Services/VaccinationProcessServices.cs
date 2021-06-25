@@ -21,17 +21,6 @@ namespace VaccinationProject.Controller.Services
         {
             _context.Add(item);
         }
-
-        public List<VaccinationProcess> GetAll()
-        {
-            return _context.VaccinationProcesses.ToList();
-        }
-
-        public VaccinationProcess GetById(string id)
-        {
-            return _context.VaccinationProcesses.Find(id);
-        }
-
         public void Save()
         {
             _context.SaveChanges();

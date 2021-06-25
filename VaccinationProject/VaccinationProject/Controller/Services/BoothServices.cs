@@ -8,7 +8,7 @@ using VaccinationProject.Controller.Repository;
 
 namespace VaccinationProject.Controller.Services
 {
-    public class BoothServices : IRepository01<Booth>
+    public class BoothServices : IRepository01<Booth> , IRepository03<Booth>
     {
         private VaccinationProjectDBContext _context;
 

@@ -22,16 +22,6 @@ namespace VaccinationProject.Controller.Services
             _context.Add(item);
         }
 
-        public List<ChronicDisease> GetAll()
-        {
-            return _context.ChronicDiseases.ToList();
-        }
-
-        public ChronicDisease GetById(int id)
-        {
-            return _context.ChronicDiseases.Find(id);
-        }
-
         public void Save()
         {
             _context.SaveChanges();

@@ -22,16 +22,6 @@ namespace VaccinationProject.Controller.Services
                 _context.Add(item);
             }
 
-            public List<Citizen> GetAll()
-            {
-                return _context.Citizens.ToList();
-            }
-
-            public Citizen GetById(int id)
-            {
-                return _context.Citizens.Find(id);
-            }
-
             public void Save()
             {
                 _context.SaveChanges();
