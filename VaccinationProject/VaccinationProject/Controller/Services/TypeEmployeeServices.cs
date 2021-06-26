@@ -8,23 +8,18 @@ using VaccinationProject.Controller.Repository;
 
 namespace VaccinationProject.Controller.Services
 {
-    public class BoothServices : IRepository01<Booth> , IRepository03<Booth>
+    public class TypeEmployeeServices : IRepository01 <TypeEmployee>
     {
         private VaccinationProjectDBContext _context;
 
-        public BoothServices()
+        public TypeEmployeeServices()
         {
             _context = new VaccinationProjectDBContext();
         }
 
-        public Booth GetById(int id)
+        public TypeEmployee GetById(int id)
         {
-            return _context.Booths.Find(id);
-        }
-
-        public List<Booth> GetAll()
-        {
-            return _context.Booths.ToList();
+            return _context.TypeEmployees.Find(id);
         }
     }
 }

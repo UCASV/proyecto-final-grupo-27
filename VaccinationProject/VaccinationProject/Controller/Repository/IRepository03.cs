@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace VaccinationProject.Controller.Repository
 {
-    public interface IRepository02<T>
+    public interface IRepository03<T>
     {
-
-        void Create(T item);
-
-        void Save();
+        List<T> GetAll();
     }
 }

@@ -8,23 +8,17 @@ using VaccinationProject.Controller.Repository;
 
 namespace VaccinationProject.Controller.Services
 {
-    public class BoothServices : IRepository01<Booth> , IRepository03<Booth>
+    public class SideEffectServices : IRepository03<SideEffect>
     {
         private VaccinationProjectDBContext _context;
 
-        public BoothServices()
+        public SideEffectServices()
         {
             _context = new VaccinationProjectDBContext();
         }
-
-        public Booth GetById(int id)
+        public List<SideEffect> GetAll()
         {
-            return _context.Booths.Find(id);
-        }
-
-        public List<Booth> GetAll()
-        {
-            return _context.Booths.ToList();
+            return _context.SideEffects.ToList();
         }
     }
 }

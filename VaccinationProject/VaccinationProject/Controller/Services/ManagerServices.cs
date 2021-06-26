@@ -21,5 +21,10 @@ namespace VaccinationProject.Controller.Services
         {
             return _context.Managers.Find(id);
         }
+
+        public Manager GetByUserandPass(string username, string password)
+        {
+            return _context.Managers.FirstOrDefault(m => m.UserName == username && m.Pass == password);
+        }
     }
 }

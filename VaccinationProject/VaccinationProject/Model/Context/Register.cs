@@ -7,6 +7,7 @@ namespace VaccinationProject.Context
 {
     public partial class Register
     {
+        public int Id { get; set; }
         public int IdManager { get; set; }
         public int IdBooth { get; set; }
         public DateTime DateLogin { get; set; }

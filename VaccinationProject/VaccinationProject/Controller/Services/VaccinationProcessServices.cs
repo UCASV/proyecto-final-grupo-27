@@ -8,7 +8,7 @@ using VaccinationProject.Controller.Repository;
 
 namespace VaccinationProject.Controller.Services
 {
-    public class VaccinationProcessServices : IRepository02<VaccinationProcess>
+    public class VaccinationProcessServices :IRepository02<VaccinationProcess>
     {
         private VaccinationProjectDBContext _context;
 
@@ -22,19 +22,15 @@ namespace VaccinationProject.Controller.Services
             _context.Add(item);
         }
 
-        public List<VaccinationProcess> GetAll()
+        public VaccinationProcess GetbyIdreservation(int id)
         {
-            return _context.VaccinationProcesses.ToList();
-        }
-
-        public VaccinationProcess GetById(int id)
-        {
-            return _context.VaccinationProcesses.Find(id);
+            return _context.VaccinationProcesses.FirstOrDefault(v => v.IdReservation == id);
         }
 
         public void Save()
         {
             _context.SaveChanges();
         }
+
     }
 }
