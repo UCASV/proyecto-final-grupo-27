@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationProject.Context;
@@ -32,6 +33,7 @@ namespace VaccinationProject.View
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
+            string patternDUI = @"^\d{8}-\d{1}$", patternPhone = @"^\d{4}-\d{4}$", patternEmail = "^[^@\\s]+@[^@\\s\\.]+\\.[^@\\s\\.]+(\\.[^@\\s\\.])?$";
             Citizen person = new Citizen();
             person.CitizenName = txtName.Text;
             person.CitizenAddress = txtAdress.Text;
@@ -69,10 +71,28 @@ namespace VaccinationProject.View
 
             ChronicDisease cdis = new ChronicDisease();
 
-            if (person.CitizenName == "" || person.CitizenAddress == "" || person.Email == "" || person.PhoneNumber == "" || person.Dui == "" || age == -1)
+            if (person.CitizenName == "" || person.CitizenAddress == "" || person.PhoneNumber == "" || person.Dui == "" || age == -1)
             {
                 MessageBox.Show("Rellene todos los campos para iniciar sesion correctamente", "Ministerio de Salud",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(!Regex.IsMatch(person.Dui, patternDUI))
+            {
+                MessageBox.Show("El numero de DUI ingresado es invalido", "Ministerio de Salud", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(!Regex.IsMatch(person.PhoneNumber, patternPhone))
+            {
+                MessageBox.Show("El numero de telefono ingresado es invalido", "Ministerio de Salud",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (person.Email != null)
+            {
+                if (!Regex.IsMatch(person.Email, patternEmail))
+                {
+                    MessageBox.Show("La direccion de correo electronico ingresado es invalido", "Ministerio de Salud",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -119,10 +139,7 @@ namespace VaccinationProject.View
                      MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                 }
-
             }
-
-           
         }
     }
 }

@@ -51,18 +51,20 @@ namespace VaccinationProject
 
             if (Regex.IsMatch(dui, pattern))
             {
-                var reser = reservation.GetByDUI(dui);
+                var reser = new List<Reservation>();
+                reser.Add(reservation.GetByDUI(dui));
 
                 if (reser != null)
                 {
-                    DialogResult answer = MessageBox.Show($"¿Seguro que desea visualizar la reserva del cuidadano con id {reser.DuiCitizen}?", "Seguimiento de Citas",
+                    DialogResult answer = MessageBox.Show($"¿Seguro que desea visualizar la reserva del cuidadano?", "Seguimiento de Citas",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (answer == DialogResult.Yes)
                     {
-                        var MappedReservation = VaccinationProjectMapper.MapReservationToReservationVm(reser);
+                        var MappedReservation = new List<ReservationVm>();
+                        MappedReservation.Add(VaccinationProjectMapper.MapReservationToReservationVm(reser[0]));
 
                         dgvReservationTrack.DataSource = null;
-                        dgvReservationTrack.DataSource = reser;
+                        dgvReservationTrack.DataSource = MappedReservation;
 
                         btnProcess.Enabled = true;
                     }
@@ -106,12 +108,14 @@ namespace VaccinationProject
                        .SetFontSize(15);
                         document.Add(subheader);
 
+                        document.Add(new Paragraph("\n"));
+
                         LineSeparator ls = new LineSeparator(new SolidLine());
                         document.Add(ls);
 
                         document.Add(new Paragraph("\n\n"));
 
-                    Table table = new Table(15);
+                        Table table = new Table(dgvReservationTrack.ColumnCount);
                         table.SetWidth(UnitValue.CreatePercentValue(100));
 
                         for (int i = 0; i < dgvReservationTrack.ColumnCount; i++)
@@ -135,6 +139,7 @@ namespace VaccinationProject
                                 table.AddCell(gteCell);
                             }
                         }
+
                         document.Add(table);
 
                         document.Close();
