@@ -26,10 +26,12 @@ namespace VaccinationProject
     {
         private ReservationServices reservation;
         private Reservation ReservationReference;
+        private VaccinationProcessServices vaccineProccess;
         public frmReservationTracking()
         {
             InitializeComponent();
             reservation = new ReservationServices();
+            vaccineProccess = new VaccinationProcessServices();
         }
 
         private void frmReservationTracking_Load(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace VaccinationProject
                 var reser = new List<Reservation>();
                 reser.Add(reservation.GetByDUI(dui));
 
-                if (reser != null)
+                if (reser[0] != null)
                 {
                     DialogResult answer = MessageBox.Show($"¿Seguro que desea visualizar la reserva del cuidadano?", "Seguimiento de Citas",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -161,11 +163,16 @@ namespace VaccinationProject
                 {
                     ReservationReference = reservation.GetByDUI(txtDuiCitizen.Text);
 
-                    if(ReservationReference != null)
+                    if(ReservationReference != null && vaccineProccess.GetbyIdreservation(ReservationReference.Id) == null)
                     {
                         var window = new frmVaccinationProcess(ReservationReference);
-                        window.ShowDialog();
                         this.Hide();
+                        window.ShowDialog();
+
+                    }
+                    else if(vaccineProccess.GetbyIdreservation(ReservationReference.Id) != null)
+                    {
+                        MessageBox.Show("Ya se le ha aplicado la primer dosis al ciudadano", "Seguimiento de Citas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {

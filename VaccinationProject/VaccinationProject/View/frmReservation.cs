@@ -33,7 +33,7 @@ namespace VaccinationProject.View
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            string patternDUI = @"^\d{8}-\d{1}$", patternPhone = @"^\d{4}-\d{4}$", patternEmail = "^[^@\\s]+@[^@\\s\\.]+\\.[^@\\s\\.]+(\\.[^@\\s\\.])?$";
+            string patternDUI = @"^\d{8}-\d{1}$", patternPhone = @"^\d{4}-\d{4}$", patternEmail = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
             Citizen person = new Citizen();
             person.CitizenName = txtName.Text;
             person.CitizenAddress = txtAdress.Text;
@@ -41,7 +41,7 @@ namespace VaccinationProject.View
             person.PhoneNumber = txtPhoneN.Text;
             person.Dui = txtDui.Text;
             person.IdManager = manager.Id;
-            var age = 0;
+            int age;
             if (txtAge.Text == "")
             {
                 age = -1;
@@ -57,11 +57,6 @@ namespace VaccinationProject.View
                  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            else if (txtId.Text == "" && age >=60)
-            {
-                person.NumIdentifier = null;
-
-            }
 
             Reservation reserve = new Reservation();
             Random r = new Random();
@@ -69,76 +64,136 @@ namespace VaccinationProject.View
             Booth boo = new Booth();
             boo = Booth.GetById(boo.Id = (r.Next(1, 11)));
 
-            ChronicDisease cdis = new ChronicDisease();
+            
 
             if (person.CitizenName == "" || person.CitizenAddress == "" || person.PhoneNumber == "" || person.Dui == "" || age == -1)
             {
                 MessageBox.Show("Rellene todos los campos para iniciar sesion correctamente", "Ministerio de Salud",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(!Regex.IsMatch(person.Dui, patternDUI))
+            else if (!Regex.IsMatch(person.Dui, patternDUI))
             {
-                MessageBox.Show("El numero de DUI ingresado es invalido", "Ministerio de Salud", 
+                MessageBox.Show("El numero de DUI ingresado es invalido", "Ministerio de Salud",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(!Regex.IsMatch(person.PhoneNumber, patternPhone))
+            else if (!Regex.IsMatch(person.PhoneNumber, patternPhone))
             {
                 MessageBox.Show("El numero de telefono ingresado es invalido", "Ministerio de Salud",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (person.Email != null)
+            else if (person.Email != null && !Regex.IsMatch(person.Email, patternEmail))
             {
-                if (!Regex.IsMatch(person.Email, patternEmail))
-                {
+
                     MessageBox.Show("La direccion de correo electronico ingresado es invalido", "Ministerio de Salud",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
+
             else
             {
-               if (age >= 60)
+               if(Citizen.Comprobation(person.Dui, person.PhoneNumber, person.Email) != null)
                 {
-                    person.IdPriorityGroup = 1;
-                    Citizen.Create(person);
-                    Citizen.Save();
-
-                    reserve.DuiCitizen = person.Dui;
-                    reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
-                    reserve.VaccinationPlace = boo.Place;
-                    Reservation.Create(reserve);
-                    Reservation.Save();
-                    if (!(txtChronicDisease.Text == ""))
-                    {
-                        cdis.DuiCitizen = person.Dui;
-                        cdis.ChronicDisease1 = txtChronicDisease.Text;
-                        cDisease.Create(cdis);
-                    }
-                    MessageBox.Show($"Reservación de {person.CitizenName} hecha", "Ministerio de Salud",
-                      MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    MessageBox.Show("DUI, Teléfono o Correo Electrónico repetidos en la base de datos", "Ministerio de Salud",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-               else if (!(txtId.Text == "" && age < 60))
+                else
                 {
-                    person.NumIdentifier = Convert.ToInt32(txtId.Text);
-                    person.IdPriorityGroup = Convert.ToInt32(txtId.Text[0].ToString());
-                    Citizen.Create(person);
-                    Citizen.Save();
-
-                    reserve.DuiCitizen = person.Dui;
-                    reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
-                    reserve.VaccinationPlace = boo.Place;
-                    Reservation.Create(reserve);
-                    Reservation.Save();
-                    if (!(txtChronicDisease.Text == ""))
+                    if (age >= 60 && age <= 120)
                     {
-                        cdis.DuiCitizen = person.Dui;
-                        cdis.ChronicDisease1 = txtChronicDisease.Text;
-                        cDisease.Create(cdis);
+                        if (txtId.Text == "")
+                        {
+                            person.IdPriorityGroup = 1;
+                            person.NumIdentifier = null;
+                            Citizen.Create(person);
+                            Citizen.Save();
+
+                            reserve.DuiCitizen = person.Dui;
+                            reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+                            reserve.VaccinationPlace = boo.Place;
+                            Reservation.Create(reserve);
+                            Reservation.Save();
+                            if (!(txtChronicDisease.Text == ""))
+                            {
+                                string phrase = txtChronicDisease.Text;
+                                string[] words = phrase.Split(',');
+
+                                foreach (var w in words)
+                                {
+                                    ChronicDisease cdis = new ChronicDisease();
+                                    cdis.DuiCitizen = person.Dui;
+                                    cdis.ChronicDisease1 = w;
+                                    cDisease.Create(cdis);
+                                    cDisease.Save();
+                                }
+                               
+                            }
+                            MessageBox.Show($"Reservación de {person.CitizenName} hecha", "Ministerio de Salud",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                        }
+                        else if (txtId.Text != "")
+                        {
+                            person.NumIdentifier = Convert.ToInt32(txtId.Text);
+                            person.IdPriorityGroup = 1;
+                            Citizen.Create(person);
+                            Citizen.Save();
+
+                            reserve.DuiCitizen = person.Dui;
+                            reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+                            reserve.VaccinationPlace = boo.Place;
+                            Reservation.Create(reserve);
+                            Reservation.Save();
+                            if (!(txtChronicDisease.Text == ""))
+                            {
+                                string phrase = txtChronicDisease.Text;
+                                string[] words = phrase.Split(',');
+
+                                foreach (var w in words)
+                                {
+                                    ChronicDisease cdis = new ChronicDisease();
+                                    cdis.DuiCitizen = person.Dui;
+                                    cdis.ChronicDisease1 = w;
+                                    cDisease.Create(cdis);
+                                    cDisease.Save();
+                                } 
+                            }
+                            MessageBox.Show($"Reservación de {person.CitizenName} hecha", "Ministerio de Salud",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                        }
+
                     }
-                    MessageBox.Show($"Reservación de {person.CitizenName} hecha", "Ministerio de Salud",
-                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    else if (!(txtId.Text == "") && age < 60 && age >= 18)
+                    {
+                        person.NumIdentifier = Convert.ToInt32(txtId.Text);
+                        person.IdPriorityGroup = Convert.ToInt32(txtId.Text[0].ToString());
+                        Citizen.Create(person);
+                        Citizen.Save();
+
+                        reserve.DuiCitizen = person.Dui;
+                        reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+                        reserve.VaccinationPlace = boo.Place;
+                        Reservation.Create(reserve);
+                        Reservation.Save();
+                        if (!(txtChronicDisease.Text == ""))
+                        {
+                            string phrase = txtChronicDisease.Text;
+                            string[] words = phrase.Split(',');
+
+                            foreach (var w in words)
+                            {
+                                ChronicDisease cdis = new ChronicDisease();
+                                cdis.DuiCitizen = person.Dui;
+                                cdis.ChronicDisease1 = w;
+                                cDisease.Create(cdis);
+                                cDisease.Save();
+                            }
+                        }
+                        MessageBox.Show($"Reservación de {person.CitizenName} hecha", "Ministerio de Salud",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                    }
                 }
+                
             }
         }
     }

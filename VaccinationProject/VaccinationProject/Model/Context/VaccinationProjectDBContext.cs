@@ -33,7 +33,7 @@ namespace VaccinationProject.Context
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=VaccinationProjectDB;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=VaccinationProjectDB;Trusted_Connection=True;");
             }
         }
 
@@ -72,8 +72,6 @@ namespace VaccinationProject.Context
             {
                 entity.ToTable("CHRONIC_DISEASE");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.ChronicDisease1)
                     .HasMaxLength(50)
                     .IsUnicode(false)
@@ -95,7 +93,7 @@ namespace VaccinationProject.Context
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__C0317D904BD256E9");
+                    .HasName("PK__CITIZEN__C0317D9048AADA6D");
 
                 entity.ToTable("CITIZEN");
 

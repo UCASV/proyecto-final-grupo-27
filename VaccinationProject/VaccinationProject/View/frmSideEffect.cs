@@ -40,9 +40,6 @@ namespace VaccinationProject
 
             int nextDose = random.Next(42,57);
             vaccinationProcessData.DateSecondDose = vaccinationProcessData.DateVaccination.AddDays(nextDose);
-
-            var userReservation = dbReservation.GetById(vaccinationProcessData.IdReservation);
-            vaccinationProcessData.PlaceSecondDose = userReservation.VaccinationPlace;
             vaccinationProcessData.PlaceSecondDose = dbReservation.GetById(vaccinationProcessData.IdReservation).VaccinationPlace;
 
             vaccineProccess.Create(vaccinationProcessData);
