@@ -27,11 +27,13 @@ namespace VaccinationProject
         private ReservationServices reservation;
         private Reservation ReservationReference;
         private VaccinationProcessServices vaccineProccess;
-        public frmReservationTracking()
+        private Manager manager;
+        public frmReservationTracking(Manager manager)
         {
             InitializeComponent();
             reservation = new ReservationServices();
             vaccineProccess = new VaccinationProcessServices();
+            this.manager = manager;
         }
 
         private void frmReservationTracking_Load(object sender, EventArgs e)
@@ -73,7 +75,11 @@ namespace VaccinationProject
                 }
                 else
                 {
-                    MessageBox.Show("El Dui ingresado no pertenece a ningun ciudadano", "Seguimiento de Citas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El Dui ingresado no pertenece a ningun ciudadano almacenado en la base de datos", "Seguimiento de Citas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    frmReservation window = new frmReservation(manager);
+                    this.Hide();
+                    window.ShowDialog();
                 }
             }
             else if (dui == "" || dui == " " || dui == "  ")

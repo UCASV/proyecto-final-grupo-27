@@ -74,7 +74,7 @@ namespace VaccinationProject
 
         private void btnReservationTracking_Click(object sender, EventArgs e)
         {
-            frmReservationTracking window = new frmReservationTracking();
+            frmReservationTracking window = new frmReservationTracking(manager);
             window.ShowDialog();
         }
 

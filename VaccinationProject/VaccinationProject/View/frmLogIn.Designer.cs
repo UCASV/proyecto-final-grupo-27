@@ -105,7 +105,7 @@ namespace VaccinationProject.View
             // cmbBooth
             // 
             this.cmbBooth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBooth.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cmbBooth.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.cmbBooth.FormattingEnabled = true;
             this.cmbBooth.Location = new System.Drawing.Point(117, 347);
             this.cmbBooth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -137,6 +137,7 @@ namespace VaccinationProject.View
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.picLogo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
