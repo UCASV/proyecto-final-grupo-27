@@ -45,7 +45,7 @@ namespace VaccinationProject
             vaccineProccess.Create(vaccinationProcessData);
             vaccineProccess.Save();
 
-            MessageBox.Show($"Su cita para segunda dosis a sido agendada\nLugar: {vaccinationProcessData.PlaceSecondDose}\nFecha: {vaccinationProcessData.DateSecondDose}", "Gobierno de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Su cita para segunda dosis ha sido agendada\nLugar: {vaccinationProcessData.PlaceSecondDose}\nFecha: {vaccinationProcessData.DateSecondDose}", "Gobierno de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
         }
     }

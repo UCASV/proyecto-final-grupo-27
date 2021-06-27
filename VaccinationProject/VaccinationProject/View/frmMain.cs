@@ -94,9 +94,14 @@ namespace VaccinationProject
         {
             DialogResult answer = MessageBox.Show("¿Seguro que desea salir de la aplicación Soporte?", "Salir",
            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (answer == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+            else { 
+            frmLogIn window = new frmLogIn();
+            window.Show();
             }
         }
     }

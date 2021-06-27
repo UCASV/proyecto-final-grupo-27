@@ -49,12 +49,12 @@ namespace VaccinationProject.View
         private void btnVaccine_Click(object sender, EventArgs e)
         {
             vaccinationProcessData.DateVaccination = dtpVaccine.Value;
-            DialogResult message = MessageBox.Show("¿Presenta algun effecto secundario?", "Gobierno de El Salvador", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult message = MessageBox.Show("¿Presenta algún efecto secundario?", "Gobierno de El Salvador", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if(message == DialogResult.Yes)
             {
                 var window = new frmSideEffect(vaccinationProcessData);
                 this.Hide();
-                window.Show();
+                window.ShowDialog();
             }
             else 
             {
@@ -66,7 +66,7 @@ namespace VaccinationProject.View
                 vaccineProccess.Create(vaccinationProcessData);
                 vaccineProccess.Save();
 
-                MessageBox.Show($"Su cita para segunda dosis a sido agendada\nLugar: {vaccinationProcessData.PlaceSecondDose}\nFecha: {vaccinationProcessData.DateSecondDose}", "Gobierno de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);         
+                MessageBox.Show($"Su cita para segunda dosis ha sido agendada\nLugar: {vaccinationProcessData.PlaceSecondDose}\nFecha: {vaccinationProcessData.DateSecondDose}", "Gobierno de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);         
                 this.Hide();
             }
         }
