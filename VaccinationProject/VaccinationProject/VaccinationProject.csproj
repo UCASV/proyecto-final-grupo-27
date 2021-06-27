@@ -4,6 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\logodegobierno.ico</ApplicationIcon>
+    <AssemblyName>Sistema de Vacunacion</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
