@@ -112,4 +112,4 @@ Si no es solicitado permisos de administrador debemos aceptarlos.
 
 - Paso 3:
 
-Ejecutar el programa dando dlocle click en el acceso directo del escritorio o en el menu inicio.
+Ejecutar el programa dando doble click en el acceso directo del escritorio o en el menu inicio.
