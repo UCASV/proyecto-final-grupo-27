@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationProject", "VaccinationProject\VaccinationProject.csproj", "{0326090F-C4E0-45AA-9658-FD2A5018211B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Sistema Vacunacion", "Sistema Vacunacion\Sistema Vacunacion.vdproj", "{49795002-69C0-4D6E-BCAD-FD061192E671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0326090F-C4E0-45AA-9658-FD2A5018211B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0326090F-C4E0-45AA-9658-FD2A5018211B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0326090F-C4E0-45AA-9658-FD2A5018211B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0326090F-C4E0-45AA-9658-FD2A5018211B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49795002-69C0-4D6E-BCAD-FD061192E671}.Debug|Any CPU.ActiveCfg = Debug
+		{49795002-69C0-4D6E-BCAD-FD061192E671}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72415206-28C5-4E4A-8E7E-7A44A705D745}
+	EndGlobalSection
+EndGlobal
