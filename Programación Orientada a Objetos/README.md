@@ -95,9 +95,9 @@ Lo que necesitamos es:
 
 > - Tener creada la bases de datos y con el banco de datos inicial, esto lo puede hacer ejecutando el query con el nombre __VaccinationProjectDB__, el cual se encuentra en este mismo repositorio en el apartado de _release_.
 
-> -Debe tener instalada la version 5.0.7 de __Entity Framework Core__.
+> - Debe tener instalada la version 5.0.7 de __Entity Framework Core__.
 
->Debe tener instalada la version 5.0 de __.NET Core__.
+> - Debe tener instalada la version 5.0 de __.NET Core__.
 
 Luego de cumplir estos requisitos, podemos empezar con el proceso de instalacion.
 
