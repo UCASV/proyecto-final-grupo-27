@@ -162,6 +162,36 @@ namespace VaccinationProject.View
                         }
 
                     }
+					else if (!(txtChronicDisease.Text == "") && age < 60 && age >= 18)
+                    {
+                        person.NumIdentifier = Convert.ToInt32(txtId.Text);
+                        person.IdPriorityGroup = 4;
+                        Citizen.Create(person);
+                        Citizen.Save();
+
+                        reserve.DuiCitizen = person.Dui;
+                        reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+                        reserve.VaccinationPlace = boo.Place;
+                        Reservation.Create(reserve);
+                        Reservation.Save();
+                        if (!(txtChronicDisease.Text == ""))
+                        {
+                            string phrase = txtChronicDisease.Text;
+                            string[] words = phrase.Split(',');
+
+                            foreach (var w in words)
+                            {
+                                ChronicDisease cdis = new ChronicDisease();
+                                cdis.DuiCitizen = person.Dui;
+                                cdis.ChronicDisease1 = w;
+                                cDisease.Create(cdis);
+                                cDisease.Save();
+                            }
+                        }
+                        MessageBox.Show($"Reservación de {person.CitizenName} hecha", "Ministerio de Salud",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                    }
                     else if (!(txtId.Text == "") && age < 60 && age >= 18)
                     {
                         person.NumIdentifier = Convert.ToInt32(txtId.Text);

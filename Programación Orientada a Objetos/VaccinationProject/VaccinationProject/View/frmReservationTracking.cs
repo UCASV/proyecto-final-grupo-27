@@ -41,6 +41,10 @@ namespace VaccinationProject
             btnProcess.Enabled = false;
 
             var DS = reservation.GetAll();
+			if(DS == null)
+			{
+				btnProcess.Enabled = false;
+			}
             var MappedDS = new List<ReservationVm>();
 
             DS.ForEach(e => MappedDS.Add(VaccinationProjectMapper.MapReservationToReservationVm(e)));

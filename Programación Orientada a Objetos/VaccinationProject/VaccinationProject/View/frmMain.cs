@@ -99,10 +99,6 @@ namespace VaccinationProject
             {
                 e.Cancel = true;
             }
-            else { 
-            frmLogIn window = new frmLogIn();
-            window.Show();
-            }
         }
     }
 }
