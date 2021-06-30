@@ -15,6 +15,7 @@ namespace VaccinationProject
 {
     public partial class frmMain : Form
     {
+		// Propiadades con las que trabaja este formulario y pasa como referencia a otros.
         public Manager manager { get; set; }
         public Booth booth { get; set; }
 
@@ -39,8 +40,8 @@ namespace VaccinationProject
             tabSupport.SizeMode = TabSizeMode.Fixed;
             tabSupport.TabStop = false;
 
-            txtIDManager.Text = manager.Id.ToString();
-            txtNameManager.Text = manager.EmployeeName;
+            txtIDManager.Text = manager.Id.ToString(); // Se pueblan los textBox con la informacion de la cabina en la que se inicio sesion y la
+            txtNameManager.Text = manager.EmployeeName; // informacion del gestor que inicio sesion.
             txtMailManager.Text = manager.Email;
             txtTypeEmployee.Text = TypeEmploye.GetById(manager.IdTypeEmployee).TypeEmployee1;
             txtManagerAddress.Text = manager.HomeAddress;
@@ -68,17 +69,17 @@ namespace VaccinationProject
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
-            frmReservation window = new frmReservation(manager);
+            frmReservation window = new frmReservation(manager); // Evento click para mostrar el formulario de Reservacion
             window.ShowDialog();
         }
 
         private void btnReservationTracking_Click(object sender, EventArgs e)
         {
-            frmReservationTracking window = new frmReservationTracking(manager);
+            frmReservationTracking window = new frmReservationTracking(manager); // Evento click para mostrar el formulario de Seguimiento de Citas
             window.ShowDialog();
         }
 
-        private void mstLogOut_Click(object sender, EventArgs e)
+        private void mstLogOut_Click(object sender, EventArgs e) // Evento click para la confirmacion de cierre de sesion.
         {
             DialogResult answer = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Cerrar sesión",
            MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -14,6 +14,7 @@ namespace VaccinationProject.View
 {
     public partial class frmLogIn : Form
     {
+		// Se inicializan atributos que seran utilizados y seran enviados como referencia a los distintos formularios.
         private BoothServices Booth = new BoothServices();
         private ManagerServices Manager = new ManagerServices();
         private RegisterServices Register = new RegisterServices();
@@ -24,7 +25,7 @@ namespace VaccinationProject.View
 
         private void frmLogIn_Load(object sender, EventArgs e)
         {
-            cmbBooth.DataSource = Booth.GetAll();
+            cmbBooth.DataSource = Booth.GetAll(); // Se puebla el comboBox con las direcciones de las cabinas almacenadas en la DB.
             cmbBooth.DisplayMember = "Place";
             cmbBooth.ValueMember = "Id";
 
@@ -37,19 +38,19 @@ namespace VaccinationProject.View
             var boo = Booth.GetById(cmbBooth.SelectedIndex + 1);
 
 
-            if (txtUser.Text == "" || txtPass.Text == "")
+            if (txtUser.Text == "" || txtPass.Text == "") // Validacion si se intenta iniciar sesion con los campos de usuario y contraseña vacios.
             {
                 MessageBox.Show("Rellene todos los campos para iniciar sesion correctamente", "Ministerio de Salud",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (man is null)
+            else if (man is null) // validacion si se ingresan datos invalidos en los campos de usuario y contraseña.
             { 
                 MessageBox.Show("Gestor no encontrado. Datos inválidos. " +
                     "Vuelve a ingresar los datos", "Ministerio de Salud",
                   MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (man.UserName == txtUser.Text && man.Pass == txtPass.Text)
-            {
+            else if (man.UserName == txtUser.Text && man.Pass == txtPass.Text) // Si el usuario y contraseña ingresados corresponden a uno almacenado en la DB
+            {																   // procedemos a agregar los datos a la tabla de registro de inicio de sesion.
                 MessageBox.Show($"Bienvenido/a {man.EmployeeName}", "Ministerio de Salud",
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Register reg = new Register();
