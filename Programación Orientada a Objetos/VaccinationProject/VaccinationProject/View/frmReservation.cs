@@ -107,7 +107,14 @@ namespace VaccinationProject.View
                             Citizen.Save();
 
                             reserve.DuiCitizen = person.Dui;
-                            reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+
+                            var dateNextDose = DateTime.Now.AddDays(r.Next(5, 10)).ToShortDateString();
+                            List<string> minutes = new List<string>() { "00", "15", "30", "45" };
+                            int hour = r.Next(7, 24);
+                            int index = r.Next(minutes.Count);
+                            string min = minutes[index];
+                            reserve.DateReservation = Convert.ToDateTime(dateNextDose + " " + $"{hour.ToString()}:{min}");  //se crea de manera aleatoria la fecha y hora de la reserva
+
                             reserve.VaccinationPlace = boo.Place;
                             Reservation.Create(reserve);
                             Reservation.Save();
@@ -138,7 +145,14 @@ namespace VaccinationProject.View
                             Citizen.Save();
 
                             reserve.DuiCitizen = person.Dui;
-                            reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+
+                            var dateNextDose = DateTime.Now.AddDays(r.Next(5, 10)).ToShortDateString();
+                            List<string> minutes = new List<string>() { "00", "15", "30", "45" };
+                            int hour = r.Next(7, 24);
+                            int index = r.Next(minutes.Count);
+                            string min = minutes[index];
+                            reserve.DateReservation = Convert.ToDateTime(dateNextDose + " " + $"{hour.ToString()}:{min}"); //se crea de manera aleatoria la fecha y hora de la reserva
+
                             reserve.VaccinationPlace = boo.Place;
                             Reservation.Create(reserve);
                             Reservation.Save();
@@ -170,7 +184,14 @@ namespace VaccinationProject.View
                         Citizen.Save();
 
                         reserve.DuiCitizen = person.Dui;
-                        reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+
+                        var dateNextDose = DateTime.Now.AddDays(r.Next(5, 10)).ToShortDateString();
+                        List<string> minutes = new List<string>() { "00", "15", "30", "45" };
+                        int hour = r.Next(7, 24);
+                        int index = r.Next(minutes.Count);
+                        string min = minutes[index];
+                        reserve.DateReservation = Convert.ToDateTime(dateNextDose + " " + $"{hour.ToString()}:{min}"); //se crea de manera aleatoria la fecha y hora de la reserva
+
                         reserve.VaccinationPlace = boo.Place;
                         Reservation.Create(reserve);
                         Reservation.Save();
@@ -200,7 +221,14 @@ namespace VaccinationProject.View
                         Citizen.Save();
 
                         reserve.DuiCitizen = person.Dui;
-                        reserve.DateReservation = DateTime.Now.AddDays(r.Next(5, 10));
+
+                        var dateNextDose = DateTime.Now.AddDays(r.Next(5, 10)).ToShortDateString();
+                        List<string> minutes = new List<string>() { "00", "15", "30", "45" };
+                        int hour = r.Next(7, 24);
+                        int index = r.Next(minutes.Count);
+                        string min = minutes[index];
+                        reserve.DateReservation = Convert.ToDateTime(dateNextDose + " " + $"{hour.ToString()}:{min}"); //se crea de manera aleatoria la fecha y hora de la reserva
+
                         reserve.VaccinationPlace = boo.Place;
                         Reservation.Create(reserve);
                         Reservation.Save();
@@ -222,8 +250,7 @@ namespace VaccinationProject.View
                          MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                     }
-                }
-                
+                }  
             }
         }
     }
